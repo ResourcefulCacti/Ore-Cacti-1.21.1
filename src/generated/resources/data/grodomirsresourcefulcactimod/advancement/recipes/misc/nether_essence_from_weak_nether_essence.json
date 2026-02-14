@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "grodomirsresourcefulcactimod:nether_essence_from_weak_nether_essence"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_weak_nether_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": "grodomirsresourcefulcactimod:weak_nether_essence"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_weak_nether_essence"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "grodomirsresourcefulcactimod:nether_essence_from_weak_nether_essence"
+    ]
+  }
+}

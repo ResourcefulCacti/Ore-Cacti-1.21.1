@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "grodomirsresourcefulcactimod:quartz_cactus"
+  },
+  "result": {
+    "count": 4,
+    "id": "minecraft:quartz"
+  }
+}

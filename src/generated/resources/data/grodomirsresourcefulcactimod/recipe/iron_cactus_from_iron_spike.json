@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "grodomirsresourcefulcactimod:overworld_stabilizer"
+    },
+    "F": {
+      "tag": "c:fertilizers"
+    },
+    "S": {
+      "item": "grodomirsresourcefulcactimod:iron_cactus_spike"
+    }
+  },
+  "pattern": [
+    "FSF",
+    "SCS",
+    "FSF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "grodomirsresourcefulcactimod:iron_cactus"
+  }
+}

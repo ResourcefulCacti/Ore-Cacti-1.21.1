@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "grodomirsresourcefulcactimod:item/weak_overworld_essence"
+  }
+}

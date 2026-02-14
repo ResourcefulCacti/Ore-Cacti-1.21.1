@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "grodomirsresourcefulcactimod:sheared_cactus"
+    },
+    "S": {
+      "item": "minecraft:nether_star"
+    },
+    "W": {
+      "item": "grodomirsresourcefulcactimod:nether_essence"
+    }
+  },
+  "pattern": [
+    "WSW",
+    "SCS",
+    "WSW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "grodomirsresourcefulcactimod:nether_stabilizer"
+  }
+}

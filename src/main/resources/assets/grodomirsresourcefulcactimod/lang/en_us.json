@@ -1,0 +1,42 @@
+{
+  "item.grodomirsresourcefulcactimod.cactus_spike": "Cactus Spike",
+  "item.grodomirsresourcefulcactimod.copper_cactus_spike": "Copper Cactus Spike",
+  "item.grodomirsresourcefulcactimod.iron_cactus_spike": "Iron Cactus Spike",
+  "item.grodomirsresourcefulcactimod.amethyst_cactus_spike": "Amethyst Cactus Spike",
+  "item.grodomirsresourcefulcactimod.coal_cactus_spike": "Coal Cactus Spike",
+  "item.grodomirsresourcefulcactimod.diamond_cactus_spike": "Diamond Cactus Spike",
+  "item.grodomirsresourcefulcactimod.emerald_cactus_spike": "Emerald Cactus Spike",
+  "item.grodomirsresourcefulcactimod.glowstone_cactus_spike": "Glowstone Cactus Spike",
+  "item.grodomirsresourcefulcactimod.gold_cactus_spike": "Gold Cactus Spike",
+  "item.grodomirsresourcefulcactimod.lapis_cactus_spike": "Lapis Cactus Spike",
+  "item.grodomirsresourcefulcactimod.netherite_cactus_spike": "Netherite Cactus Spike",
+  "item.grodomirsresourcefulcactimod.quartz_cactus_spike": "Quartz Cactus Spike",
+  "item.grodomirsresourcefulcactimod.redstone_cactus_spike": "Redstone Cactus Spike",
+  "item.grodomirsresourcefulcactimod.weak_overworld_essence": "Weak Overworld Essence",
+  "item.grodomirsresourcefulcactimod.overworld_essence": "Overworld Essence",
+  "item.grodomirsresourcefulcactimod.overworld_stabilizer": "Overworld Stabilizer",
+  "item.grodomirsresourcefulcactimod.weak_nether_essence": "Weak Nether Essence",
+  "item.grodomirsresourcefulcactimod.nether_essence": "Nether Essence",
+  "item.grodomirsresourcefulcactimod.nether_stabilizer": "Nether Stabilizer",
+
+  "item.grodomirsresourcefulcactimod.copper_nugget": "Copper Nugget",
+
+  "block.grodomirsresourcefulcactimod.sheared_cactus": "Sheared Cactus",
+  "block.grodomirsresourcefulcactimod.iron_cactus": "Iron Cactus",
+  "block.grodomirsresourcefulcactimod.copper_cactus": "Copper Cactus",
+  "block.grodomirsresourcefulcactimod.amethyst_cactus": "Amethyst Cactus",
+  "block.grodomirsresourcefulcactimod.coal_cactus": "Coal Cactus",
+  "block.grodomirsresourcefulcactimod.diamond_cactus": "Diamond Cactus",
+  "block.grodomirsresourcefulcactimod.emerald_cactus": "Emerald Cactus",
+  "block.grodomirsresourcefulcactimod.glowstone_cactus": "Glowstone Cactus",
+  "block.grodomirsresourcefulcactimod.gold_cactus": "Gold Cactus",
+  "block.grodomirsresourcefulcactimod.lapis_cactus": "Lapis Cactus",
+  "block.grodomirsresourcefulcactimod.netherite_cactus": "Netherite Cactus",
+  "block.grodomirsresourcefulcactimod.quartz_cactus": "Quartz Cactus",
+  "block.grodomirsresourcefulcactimod.redstone_cactus": "Redstone Cactus",
+
+  "block.grodomirsresourcefulcactimod.creeper_cactus": "Creeper Cactus",
+
+  "creativetab.grodomirsresourcefulcactimod.resourcefulcacti_tab": "Resourceful Cacti"
+}
+

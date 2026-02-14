@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "C": {
+      "item": "grodomirsresourcefulcactimod:sheared_cactus"
+    },
+    "E": {
+      "item": "minecraft:echo_shard"
+    },
+    "F": {
+      "item": "grodomirsresourcefulcactimod:overworld_essence"
+    },
+    "S": {
+      "item": "minecraft:sculk"
+    }
+  },
+  "pattern": [
+    "FEF",
+    "ACA",
+    "FSF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "grodomirsresourcefulcactimod:overworld_stabilizer"
+  }
+}

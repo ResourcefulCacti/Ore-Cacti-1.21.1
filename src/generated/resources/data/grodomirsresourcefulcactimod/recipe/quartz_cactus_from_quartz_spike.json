@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "grodomirsresourcefulcactimod:sheared_cactus"
+    },
+    "F": {
+      "item": "minecraft:nether_wart"
+    },
+    "S": {
+      "item": "grodomirsresourcefulcactimod:quartz_cactus_spike"
+    }
+  },
+  "pattern": [
+    "FSF",
+    "SCS",
+    "FSF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "grodomirsresourcefulcactimod:quartz_cactus"
+  }
+}

@@ -1,0 +1,12 @@
+// 1.21.1	2026-02-10T15:34:55.2661092	Tags for minecraft:item mod id grodomirsresourcefulcactimod
+c879a23e6bfbad47af7fe260a00d7a3ddcc7403f data/c/tags/item/animal_foods.json
+c879a23e6bfbad47af7fe260a00d7a3ddcc7403f data/c/tags/item/crops/cactus.json
+c879a23e6bfbad47af7fe260a00d7a3ddcc7403f data/minecraft/tags/item/camel_food.json
+be30afeb152e432ac4642f5358097749ec92e266 data/minecraft/tags/item/coal_ores.json
+a5727287bff502cefe4c284c5623ed20942ce293 data/minecraft/tags/item/copper_ores.json
+bce966f15263909f8407224b7a31f5b682bb2241 data/minecraft/tags/item/diamond_ores.json
+af2af7be4d8c98428ce3f354934eb1b0688d38d7 data/minecraft/tags/item/emerald_ores.json
+ff57b3c7cfe5b18aa642897c36ca1ca9e56c1012 data/minecraft/tags/item/gold_ores.json
+05d060bbc17a380db0e30cf12c2eef0f993a57f7 data/minecraft/tags/item/iron_ores.json
+9c50526e74d814231ba324adee44fdde2d33e55c data/minecraft/tags/item/lapis_ores.json
+2c79561badef078d0cc3c71b8f728dd41ea07db5 data/minecraft/tags/item/redstone_ores.json

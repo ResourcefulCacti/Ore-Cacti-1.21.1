@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_redstone_spike": {
+      "conditions": {
+        "items": [
+          {
+            "items": "grodomirsresourcefulcactimod:redstone_cactus_spike"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "grodomirsresourcefulcactimod:redstone_cactus_from_redstone_spike"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_redstone_spike"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "grodomirsresourcefulcactimod:redstone_cactus_from_redstone_spike"
+    ]
+  }
+}

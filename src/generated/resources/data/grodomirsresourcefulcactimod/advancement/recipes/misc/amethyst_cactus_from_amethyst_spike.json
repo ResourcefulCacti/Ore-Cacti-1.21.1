@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_amethyst_spike": {
+      "conditions": {
+        "items": [
+          {
+            "items": "grodomirsresourcefulcactimod:amethyst_cactus_spike"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "grodomirsresourcefulcactimod:amethyst_cactus_from_amethyst_spike"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_amethyst_spike"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "grodomirsresourcefulcactimod:amethyst_cactus_from_amethyst_spike"
+    ]
+  }
+}

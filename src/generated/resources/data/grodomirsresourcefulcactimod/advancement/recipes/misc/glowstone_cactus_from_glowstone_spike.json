@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_glowstone_spike": {
+      "conditions": {
+        "items": [
+          {
+            "items": "grodomirsresourcefulcactimod:glowstone_cactus_spike"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "grodomirsresourcefulcactimod:glowstone_cactus_from_glowstone_spike"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_glowstone_spike"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "grodomirsresourcefulcactimod:glowstone_cactus_from_glowstone_spike"
+    ]
+  }
+}
