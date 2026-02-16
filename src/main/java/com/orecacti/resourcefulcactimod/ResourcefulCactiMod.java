@@ -1,9 +1,9 @@
 package com.orecacti.resourcefulcactimod;
 
-import com.orecacti.resourcefulcactimod.init.ModMenus;
 import com.orecacti.resourcefulcactimod.block.ModBlocks;
 import com.orecacti.resourcefulcactimod.item.ModCreativeModeTabs;
 import com.orecacti.resourcefulcactimod.item.ModItems;
+import com.orecacti.resourcefulcactimod.recipe.ModRecipe;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -38,7 +38,8 @@ public class ResourcefulCactiMod {
         NeoForge.EVENT_BUS.register(this);
 
         ModCreativeModeTabs.register(modEventBus);
-        ModMenus.REGISTRY.register(modEventBus);
+        ModRecipe.SERIALIZERS.register(modEventBus);
+        ModRecipe.TYPES.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);

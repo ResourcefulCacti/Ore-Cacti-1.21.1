@@ -19,8 +19,6 @@
   "item.grodomirsresourcefulcactimod.nether_essence": "Nether Essence",
   "item.grodomirsresourcefulcactimod.nether_stabilizer": "Nether Stabilizer",
 
-  "item.grodomirsresourcefulcactimod.copper_nugget": "Copper Nugget",
-
   "block.grodomirsresourcefulcactimod.sheared_cactus": "Sheared Cactus",
   "block.grodomirsresourcefulcactimod.iron_cactus": "Iron Cactus",
   "block.grodomirsresourcefulcactimod.copper_cactus": "Copper Cactus",
@@ -37,6 +35,13 @@
 
   "block.grodomirsresourcefulcactimod.creeper_cactus": "Creeper Cactus",
 
-  "creativetab.grodomirsresourcefulcactimod.resourcefulcacti_tab": "Resourceful Cacti"
+  "creativetab.grodomirsresourcefulcactimod.resourcefulcacti_tab": "Resourceful Cacti",
+
+  "tooltip.grodomirsresourcefulcactimod.tier1.firstline.tooltip": "Tier 1",
+  "tooltip.grodomirsresourcefulcactimod.tier1.secondline.tooltip": "10% chance to drop Weak Overworld Essence",
+
+  "tooltip.grodomirsresourcefulcactimod.firstline.tier2.tooltip": "Tier 2",
+  "tooltip.grodomirsresourcefulcactimod.secondline.tier2.tooltip": "5% chance to drop Weak Nether Essence",
+  "tooltip.grodomirsresourcefulcactimod.tier2.secondline.diamond_cactus.tooltip": "10% chance to drop Weak Nether Essence"
 }
 

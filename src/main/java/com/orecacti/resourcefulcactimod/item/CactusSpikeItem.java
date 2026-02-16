@@ -7,6 +7,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -56,8 +57,9 @@ public class CactusSpikeItem extends Item {
                 ItemStack spikeItem = new ItemStack(asd.get());
                 context.getPlayer().getInventory().placeItemBackInInventory(spikeItem);
             }
+            return InteractionResult.SUCCESS;
         }
-        return InteractionResult.SUCCESS;
+        return InteractionResult.PASS;
     }
 
     @Override
@@ -65,19 +67,23 @@ public class CactusSpikeItem extends Item {
         Level level = player.level();
 
         if(!player.level().isClientSide){
-            if(interactionTarget.getType() == EntityType.CREEPER){
+            if(interactionTarget.getType() == EntityType.CREEPER) {
                 ItemStack reward = new ItemStack(ModBlocks.CREEPER_CACTUS.asItem());
+
+                ItemEntity droppedItem = new ItemEntity(
+                        level,
+                        interactionTarget.getX(),
+                        interactionTarget.getY(),
+                        interactionTarget.getZ(),
+                        reward
+                );
+                level.addFreshEntity(droppedItem);
+
                 player.getItemInHand(usedHand).shrink(1);
                 interactionTarget.discard();
-                player.getInventory().placeItemBackInInventory(reward);
+                //player.getInventory().placeItemBackInInventory(reward);
+                return InteractionResult.SUCCESS;
             }
-            /*Entity newEntity = targetedEntity.create(level);
-            if(newEntity !=null){
-                newEntity.moveTo(interactionTarget.position());
-                interactionTarget.discard();
-                level.addFreshEntity(newEntity);
-            }*/
-            return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
     }

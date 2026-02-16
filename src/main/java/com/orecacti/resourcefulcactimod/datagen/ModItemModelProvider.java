@@ -32,6 +32,5 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.WEAK_NETHER_ESSENCE.get());
         basicItem(ModItems.NETHER_ESSENCE.get());
         basicItem(ModItems.NETHER_STABILIZER.get());
-        basicItem(ModItems.COPPER_NUGGET.get());
     }
 }

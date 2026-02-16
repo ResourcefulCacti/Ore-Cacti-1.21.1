@@ -1,13 +1,15 @@
-package com.orecacti.resourcefulcactimod;
+package com.orecacti.resourcefulcactimod.util;
 
+import com.orecacti.resourcefulcactimod.ResourcefulCactiMod;
 import com.orecacti.resourcefulcactimod.block.ModBlocks;
 import com.orecacti.resourcefulcactimod.block.ModCactusBlock;
+import com.orecacti.resourcefulcactimod.datagen.ModBlockLootTableProvider;
 import com.orecacti.resourcefulcactimod.item.ModItems;
-import com.orecacti.resourcefulcactimod.util.ModTags;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
@@ -15,11 +17,11 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -29,6 +31,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
@@ -48,14 +51,34 @@ public class ResourcefulCactiModClient {
         // Some client setup code
         ResourcefulCactiMod.LOGGER.info("HELLO FROM CLIENT SETUP");
         ResourcefulCactiMod.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-        event.enqueueWork(() ->{
+        /*event.enqueueWork(() ->{
             ModBlocks.BLOCKS.getEntries().forEach(entry ->{
                 Block block = entry.get();
                 if (block instanceof ModCactusBlock){
                     ItemBlockRenderTypes.setRenderLayer(block, RenderType.cutout());
                 }
             });
-        });
+        });*/
+    }
+
+    @SubscribeEvent
+    public static void appendHoverText(ItemTooltipEvent event){
+        ItemStack stack = event.getItemStack();
+        Block block = Block.byItem(stack.getItem());
+
+        if(block.defaultBlockState().is(ModTags.Blocks.TIER1_CACTUS)){
+            event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.tier1.firstline.tooltip"));
+            event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.tier1.secondline.tooltip"));
+        }
+
+        if(block.defaultBlockState().is(ModTags.Blocks.TIER2_CACTUS)){
+            event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.firstline.tier2.tooltip"));
+            if(!block.defaultBlockState().is(ModBlocks.DIAMOND_CACTUS)){
+                event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.secondline.tier2.tooltip"));
+            }else {
+                event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.tier2.secondline.diamond_cactus.tooltip"));
+            }
+        }
     }
 
     @SubscribeEvent

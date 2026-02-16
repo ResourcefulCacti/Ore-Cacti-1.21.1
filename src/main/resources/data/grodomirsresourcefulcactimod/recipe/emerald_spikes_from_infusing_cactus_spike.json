@@ -1,0 +1,10 @@
+{
+  "type": "grodomirsresourcefulcactimod:inworldinteraction",
+  "ingredients": [
+    { "item": "grodomirsresourcefulcactimod:cactus_spike" },
+    { "item": "minecraft:emerald_block" }
+  ],
+  "output": {
+    "id": "grodomirsresourcefulcactimod:emerald_cactus_spike"
+  }
+}

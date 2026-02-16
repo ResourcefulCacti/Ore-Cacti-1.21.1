@@ -1,4 +1,4 @@
-package com.orecacti.resourcefulcactimod.recipes;
+package com.orecacti.resourcefulcactimod.recipe;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -16,11 +16,11 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.DataResult;
 
-public class InWorldInteractionRecipe implements Recipe<RecipeInput>{
+public class InWorldInteractionRecipe implements Recipe<RecipeInput> {
     private final ItemStack output;
     private final NonNullList<Ingredient> recipeItems;
 
-    public InWorldInteractionRecipe(ItemStack output, NonNullList<Ingredient> recipeItems){
+    public InWorldInteractionRecipe(ItemStack output, NonNullList<Ingredient> recipeItems) {
         this.output = output;
         this.recipeItems = recipeItems;
     }
@@ -55,22 +55,15 @@ public class InWorldInteractionRecipe implements Recipe<RecipeInput>{
 
     @Override
     public RecipeType<?> getType() {
-        return Type.INSTANCE;
+        return ModRecipe.INWORLDINTERACTION_TYPE.get();
     }
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return Serializer.INSTANCE;
+        return ModRecipe.INWORLDINTERACTION_SERIALIZER.get();
     }
 
-    public static class Type implements RecipeType<InWorldInteractionRecipe> {
-        private Type(){
-        }
-
-        public static final RecipeType<InWorldInteractionRecipe> INSTANCE = new Type();
-    }
-
-    public static class Serializer implements  RecipeSerializer<InWorldInteractionRecipe>{
+    public static class Serializer implements RecipeSerializer<InWorldInteractionRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         private static final MapCodec<InWorldInteractionRecipe> CODEC = RecordCodecBuilder
                 .mapCodec(builder -> builder.group(ItemStack.STRICT_CODEC.fieldOf("output").forGetter(recipe -> recipe.output), Ingredient.CODEC_NONEMPTY.listOf().fieldOf("ingredients").flatXmap(ingredients -> {
@@ -106,6 +99,5 @@ public class InWorldInteractionRecipe implements Recipe<RecipeInput>{
             }
             ItemStack.STREAM_CODEC.encode(buf, recipe.getResultItem(null));
         }
-
     }
 }

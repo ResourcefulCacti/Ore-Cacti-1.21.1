@@ -1,0 +1,11 @@
+{
+  "type": "grodomirsresourcefulcactimod:inworldinteraction",
+  "ingredients": [
+    { "item": "minecraft:shears" },
+    { "item": "minecraft:cactus" }
+  ],
+  "output": {
+    "id": "grodomirsresourcefulcactimod:cactus_spike",
+    "count": 4
+  }
+}

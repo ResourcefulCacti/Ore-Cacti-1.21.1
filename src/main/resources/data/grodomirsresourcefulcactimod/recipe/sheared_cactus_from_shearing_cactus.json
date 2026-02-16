@@ -1,0 +1,10 @@
+{
+  "type": "grodomirsresourcefulcactimod:inworldinteraction",
+  "ingredients": [
+    { "item": "minecraft:shears" },
+    { "item": "minecraft:cactus" }
+  ],
+  "output": {
+    "id": "grodomirsresourcefulcactimod:sheared_cactus"
+  }
+}

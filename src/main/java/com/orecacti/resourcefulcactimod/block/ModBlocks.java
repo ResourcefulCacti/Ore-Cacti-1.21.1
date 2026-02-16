@@ -27,6 +27,57 @@ public class ModBlocks {
                     .mapColor(MapColor.PLANT)
                     .randomTicks()));
 
+    //Tier 1
+    public static final DeferredBlock<ModCactusBlock> COAL_CACTUS = registerBlock("coal_cactus",
+            () -> new ModCactusBlock(BlockBehaviour.Properties.of()
+                    .strength(0.4F)
+                    .sound(SoundType.WOOL)
+                    .pushReaction(PushReaction.DESTROY)
+                    .mapColor(MapColor.PLANT)
+                    .randomTicks()));
+
+    public static final DeferredBlock<ModCactusBlock> AMETHYST_CACTUS = registerBlock("amethyst_cactus",
+            () -> new ModCactusBlock(BlockBehaviour.Properties.of()
+                    .strength(0.4F)
+                    .sound(SoundType.WOOL)
+                    .pushReaction(PushReaction.DESTROY)
+                    .mapColor(MapColor.PLANT)
+                    .randomTicks()));
+
+    public static final DeferredBlock<ModCactusBlock> QUARTZ_CACTUS = registerBlock("quartz_cactus",
+            () -> new ModCactusBlock(BlockBehaviour.Properties.of()
+                    .strength(0.4F)
+                    .sound(SoundType.WOOL)
+                    .pushReaction(PushReaction.DESTROY)
+                    .mapColor(MapColor.PLANT)
+                    .randomTicks()));
+
+    public static final DeferredBlock<ModCactusBlock> GLOWSTONE_CACTUS = registerBlock("glowstone_cactus",
+            () -> new ModCactusBlock(BlockBehaviour.Properties.of()
+                    .strength(0.4F)
+                    .sound(SoundType.WOOL)
+                    .lightLevel(whyCantThisBeJustANumber -> 9)
+                    .pushReaction(PushReaction.DESTROY)
+                    .mapColor(MapColor.PLANT)
+                    .randomTicks()));
+
+    public static final DeferredBlock<ModCactusBlock> LAPIS_CACTUS = registerBlock("lapis_cactus",
+            () -> new ModCactusBlock(BlockBehaviour.Properties.of()
+                    .strength(0.4F)
+                    .sound(SoundType.WOOL)
+                    .pushReaction(PushReaction.DESTROY)
+                    .mapColor(MapColor.PLANT)
+                    .randomTicks()));
+
+    public static final DeferredBlock<ModCactusBlock> REDSTONE_CACTUS = registerBlock("redstone_cactus",
+            () -> new ModCactusBlock(BlockBehaviour.Properties.of()
+                    .strength(0.4F)
+                    .sound(SoundType.WOOL)
+                    .pushReaction(PushReaction.DESTROY)
+                    .mapColor(MapColor.PLANT)
+                    .randomTicks()));
+
+    //Tier 2
     public static final DeferredBlock<ModCactusBlock> IRON_CACTUS = registerBlock("iron_cactus",
             () -> new ModCactusBlock(BlockBehaviour.Properties.of()
                     .strength(0.4F)
@@ -43,21 +94,13 @@ public class ModBlocks {
                         .mapColor(MapColor.PLANT)
                         .randomTicks()));
 
-    public static final DeferredBlock<ModCactusBlock> AMETHYST_CACTUS = registerBlock("amethyst_cactus",
-                () -> new ModCactusBlock(BlockBehaviour.Properties.of()
-                        .strength(0.4F)
-                        .sound(SoundType.WOOL)
-                        .pushReaction(PushReaction.DESTROY)
-                        .mapColor(MapColor.PLANT)
-                        .randomTicks()));
-
-    public static final DeferredBlock<ModCactusBlock> COAL_CACTUS = registerBlock("coal_cactus",
-                () -> new ModCactusBlock(BlockBehaviour.Properties.of()
-                        .strength(0.4F)
-                        .sound(SoundType.WOOL)
-                        .pushReaction(PushReaction.DESTROY)
-                        .mapColor(MapColor.PLANT)
-                        .randomTicks()));
+    public static final DeferredBlock<ModCactusBlock> GOLD_CACTUS = registerBlock("gold_cactus",
+            () -> new ModCactusBlock(BlockBehaviour.Properties.of()
+                    .strength(0.4F)
+                    .sound(SoundType.WOOL)
+                    .pushReaction(PushReaction.DESTROY)
+                    .mapColor(MapColor.PLANT)
+                    .randomTicks()));
 
     public static final DeferredBlock<ModCactusBlock> DIAMOND_CACTUS = registerBlock("diamond_cactus",
                 () -> new ModCactusBlock(BlockBehaviour.Properties.of()
@@ -75,31 +118,8 @@ public class ModBlocks {
                         .mapColor(MapColor.PLANT)
                         .randomTicks()));
 
-    public static final DeferredBlock<ModCactusBlock> GLOWSTONE_CACTUS = registerBlock("glowstone_cactus",
-                () -> new ModCactusBlock(BlockBehaviour.Properties.of()
-                        .strength(0.4F)
-                        .sound(SoundType.WOOL)
-                        .lightLevel(whyCantThisBeJustANumber -> 9)
-                        .pushReaction(PushReaction.DESTROY)
-                        .mapColor(MapColor.PLANT)
-                        .randomTicks()));
 
-    public static final DeferredBlock<ModCactusBlock> GOLD_CACTUS = registerBlock("gold_cactus",
-                () -> new ModCactusBlock(BlockBehaviour.Properties.of()
-                        .strength(0.4F)
-                        .sound(SoundType.WOOL)
-                        .pushReaction(PushReaction.DESTROY)
-                        .mapColor(MapColor.PLANT)
-                        .randomTicks()));
-
-    public static final DeferredBlock<ModCactusBlock> LAPIS_CACTUS = registerBlock("lapis_cactus",
-                () -> new ModCactusBlock(BlockBehaviour.Properties.of()
-                        .strength(0.4F)
-                        .sound(SoundType.WOOL)
-                        .pushReaction(PushReaction.DESTROY)
-                        .mapColor(MapColor.PLANT)
-                        .randomTicks()));
-
+    //Tier 3
     public static final DeferredBlock<ModCactusBlock> NETHERITE_CACTUS = registerBlock("netherite_cactus",
                 () -> new ModCactusBlock(BlockBehaviour.Properties.of()
                         .strength(0.4F)
@@ -108,22 +128,8 @@ public class ModBlocks {
                         .mapColor(MapColor.PLANT)
                         .randomTicks()));
 
-    public static final DeferredBlock<ModCactusBlock> QUARTZ_CACTUS = registerBlock("quartz_cactus",
-                () -> new ModCactusBlock(BlockBehaviour.Properties.of()
-                        .strength(0.4F)
-                        .sound(SoundType.WOOL)
-                        .pushReaction(PushReaction.DESTROY)
-                        .mapColor(MapColor.PLANT)
-                        .randomTicks()));
 
-    public static final DeferredBlock<ModCactusBlock> REDSTONE_CACTUS = registerBlock("redstone_cactus",
-                () -> new ModCactusBlock(BlockBehaviour.Properties.of()
-                        .strength(0.4F)
-                        .sound(SoundType.WOOL)
-                        .pushReaction(PushReaction.DESTROY)
-                        .mapColor(MapColor.PLANT)
-                        .randomTicks()));
-
+    //Secret Cactus
     public static final DeferredBlock<ModCactusBlock> CREEPER_CACTUS = registerBlock("creeper_cactus",
             () -> new ModCactusBlock(BlockBehaviour.Properties.of()
                     .strength(0.4F)

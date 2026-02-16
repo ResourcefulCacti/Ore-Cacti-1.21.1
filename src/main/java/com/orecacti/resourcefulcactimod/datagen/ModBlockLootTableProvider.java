@@ -37,6 +37,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+
         dropSelf(ModBlocks.SHEARED_CACTUS.get());
         /*dropSelf(ModBlocks.IRON_CACTUS.get());
         dropSelf(ModBlocks.COPPER_CACTUS.get());

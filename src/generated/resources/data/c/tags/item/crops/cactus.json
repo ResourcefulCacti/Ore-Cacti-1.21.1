@@ -1,18 +1,18 @@
 {
   "values": [
     "grodomirsresourcefulcactimod:sheared_cactus",
+    "grodomirsresourcefulcactimod:coal_cactus",
+    "grodomirsresourcefulcactimod:amethyst_cactus",
+    "grodomirsresourcefulcactimod:quartz_cactus",
+    "grodomirsresourcefulcactimod:glowstone_cactus",
+    "grodomirsresourcefulcactimod:lapis_cactus",
+    "grodomirsresourcefulcactimod:redstone_cactus",
     "grodomirsresourcefulcactimod:iron_cactus",
     "grodomirsresourcefulcactimod:copper_cactus",
-    "grodomirsresourcefulcactimod:amethyst_cactus",
-    "grodomirsresourcefulcactimod:coal_cactus",
+    "grodomirsresourcefulcactimod:gold_cactus",
     "grodomirsresourcefulcactimod:diamond_cactus",
     "grodomirsresourcefulcactimod:emerald_cactus",
-    "grodomirsresourcefulcactimod:glowstone_cactus",
-    "grodomirsresourcefulcactimod:gold_cactus",
-    "grodomirsresourcefulcactimod:lapis_cactus",
     "grodomirsresourcefulcactimod:netherite_cactus",
-    "grodomirsresourcefulcactimod:quartz_cactus",
-    "grodomirsresourcefulcactimod:redstone_cactus",
     "grodomirsresourcefulcactimod:creeper_cactus"
   ]
 }
