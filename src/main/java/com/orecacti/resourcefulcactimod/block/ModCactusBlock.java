@@ -26,7 +26,6 @@ public class ModCactusBlock extends CactusBlock {
 
     //public static final int MAX_AGE = 15;
     //public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 15);
-    //private static final ResourceLocation SNAD_ID = ResourceLocation.fromNamespaceAndPath("utilitarian", "snad");
 
     public ModCactusBlock(Properties properties) {
         super(properties);
@@ -52,33 +51,6 @@ public class ModCactusBlock extends CactusBlock {
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         super.randomTick(state, level, pos, random);
     }
-
-    /*@Override
-    protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        BlockPos blockpos = pos.above();
-        if (level.isEmptyBlock(blockpos)) {
-            int i = 1;
-
-            while (level.getBlockState(pos.below(i)).is(this)) {
-                i++;
-            }
-
-            if (i < 30) {
-                int j = state.getValue(AGE);
-                if(net.neoforged.neoforge.common.CommonHooks.canCropGrow(level, blockpos, state, true)) {
-                    if (j == 15) {
-                        level.setBlockAndUpdate(blockpos, this.defaultBlockState());
-                        BlockState blockstate = state.setValue(AGE, Integer.valueOf(0));
-                        level.setBlock(pos, blockstate, 4);
-                        level.neighborChanged(blockstate, blockpos, this, pos, false);
-                    } else {
-                        level.setBlock(pos, state.setValue(AGE, Integer.valueOf(j + 1)), 4);
-                    }
-                    net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(level, pos, state);
-                }
-            }
-        }
-    }*/
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {

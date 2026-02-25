@@ -13,6 +13,14 @@
     "grodomirsresourcefulcactimod:netherite_cactus",
     "grodomirsresourcefulcactimod:quartz_cactus",
     "grodomirsresourcefulcactimod:redstone_cactus",
-    "grodomirsresourcefulcactimod:creeper_cactus"
+    "grodomirsresourcefulcactimod:creeper_cactus",
+    {
+      "id": "grodomirsresourcefulcactimod:kurwiszon_cactus",
+      "required": false
+    },
+    {
+      "id": "grodomirsresourcefulcactimod:chujiszon_cactus",
+      "required": false
+    }
   ]
 }

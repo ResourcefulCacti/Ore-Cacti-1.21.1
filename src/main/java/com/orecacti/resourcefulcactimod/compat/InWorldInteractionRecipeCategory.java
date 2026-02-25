@@ -5,6 +5,8 @@ import com.orecacti.resourcefulcactimod.recipe.InWorldInteractionRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
+import mezz.jei.api.gui.drawable.IDrawableAnimated;
+import mezz.jei.api.gui.drawable.IDrawableStatic;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
@@ -21,16 +23,21 @@ import org.jetbrains.annotations.Nullable;
 public class InWorldInteractionRecipeCategory implements IRecipeCategory<InWorldInteractionRecipe> {
     public static final ResourceLocation UID = ResourceLocation.fromNamespaceAndPath(ResourcefulCactiMod.MOD_ID, "inworldinteraction");
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(ResourcefulCactiMod.MOD_ID, "textures/gui/recipe2.png");
+    //public static final ResourceLocation PROGRESS_TEXTURE = ResourceLocation.fromNamespaceAndPath(ResourcefulCactiMod.MOD_ID, "textures/gui/progress.png");
 
     public static final RecipeType<InWorldInteractionRecipe> INWORLDINTERACTION_RECIPE_TYPE =
             new RecipeType<>(UID, InWorldInteractionRecipe.class);
 
     private final IDrawable background;
+    //private final IDrawable progress;
     private final IDrawable icon;
 
     public InWorldInteractionRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 86);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(Blocks.CACTUS));
+
+        //IDrawableStatic progressStatic = helper.createDrawable(PROGRESS_TEXTURE, 0, 0, 176, 86);
+        //this.progress = helper.createAnimatedDrawable(progressStatic, 100, IDrawableAnimated.StartDirection.TOP, false);
     }
 
     @Override
@@ -40,8 +47,8 @@ public class InWorldInteractionRecipeCategory implements IRecipeCategory<InWorld
 
     @Override
     public Component getTitle() {
-        return Component.literal("In World Interaction");
-        //return Component.translatable("");
+        //return Component.literal("In World Interaction");
+        return Component.translatable("recipe.grodomirsresourcefulcactimod.inworldinteraction");
     }
 
     @Override
@@ -71,5 +78,6 @@ public class InWorldInteractionRecipeCategory implements IRecipeCategory<InWorld
     public void draw(InWorldInteractionRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
         IRecipeCategory.super.draw(recipe, recipeSlotsView, guiGraphics, mouseX, mouseY);
         background.draw(guiGraphics);
+        //progress.draw(guiGraphics, 0, 0);
     }
 }

@@ -4,6 +4,8 @@ import com.orecacti.resourcefulcactimod.block.ModBlocks;
 import com.orecacti.resourcefulcactimod.item.ModCreativeModeTabs;
 import com.orecacti.resourcefulcactimod.item.ModItems;
 import com.orecacti.resourcefulcactimod.recipe.ModRecipe;
+import com.orecacti.resourcefulcactimod.util.block.ReadCactiFromJson;
+import com.orecacti.resourcefulcactimod.util.item.ReadSpikeFromJson;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -31,6 +33,8 @@ public class ResourcefulCactiMod {
     public ResourcefulCactiMod(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+        ReadCactiFromJson.loadCactiFromJson();
+        ReadSpikeFromJson.loadSpikesFromJson();
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
@@ -57,12 +61,14 @@ public class ResourcefulCactiMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        /*if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.CACTUS_SPIKE);
-            event.accept(ModItems.COPPER_CACTUS_SPIKE);
-            event.accept(ModItems.COPPER_NUGGET);
-            event.accept(ModBlocks.SHEARED_CACTUS);
-        }*/
+        if(event.getTab() == ModCreativeModeTabs.RESOURCEFUL_CACTI_TAB.get()){
+            for(int i = 0; i< ModItems.CUSTOM_ITEM.getEntries().size(); i++){
+                event.accept(ModItems.CUSTOM_ITEM.getEntries().stream().toList().get(i).get().asItem());
+            }
+            /**for(int i = 0; i< ModBlocks.CUSTOM_CACTI.getEntries().size(); i++){
+                event.accept(ModBlocks.CUSTOM_CACTI.getEntries().stream().toList().get(i).get());
+            }**/
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

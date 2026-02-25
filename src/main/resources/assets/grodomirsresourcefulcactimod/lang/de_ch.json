@@ -1,0 +1,53 @@
+{
+  "item.grodomirsresourcefulcactimod.cactus_spike": "Kaktusstachel",
+  "item.grodomirsresourcefulcactimod.copper_cactus_spike": "Kupfer-Kaktusstachel",
+  "item.grodomirsresourcefulcactimod.iron_cactus_spike": "Eisen-Kaktusstachel",
+  "item.grodomirsresourcefulcactimod.amethyst_cactus_spike": "Amethyst-Kaktusstachel",
+  "item.grodomirsresourcefulcactimod.coal_cactus_spike": "Kohle-Kaktusstachel",
+  "item.grodomirsresourcefulcactimod.diamond_cactus_spike": "Diamant-Kaktusstachel",
+  "item.grodomirsresourcefulcactimod.emerald_cactus_spike": "Smaragd-Kaktusstachel",
+  "item.grodomirsresourcefulcactimod.glowstone_cactus_spike": "Leuchtstein-Kaktusstachel",
+  "item.grodomirsresourcefulcactimod.gold_cactus_spike": "Gold-Kaktusstachel",
+  "item.grodomirsresourcefulcactimod.lapis_cactus_spike": "Lapislazuli-Kaktusstachel",
+  "item.grodomirsresourcefulcactimod.netherite_cactus_spike": "Netherit-Kaktusstachel",
+  "item.grodomirsresourcefulcactimod.quartz_cactus_spike": "Quarz-Kaktusstachel",
+  "item.grodomirsresourcefulcactimod.redstone_cactus_spike": "Redstone-Kaktusstachel",
+  "item.grodomirsresourcefulcactimod.weak_overworld_essence": "Schwache Oberweltsessenz",
+  "item.grodomirsresourcefulcactimod.overworld_essence": "Oberweltsessenz",
+  "item.grodomirsresourcefulcactimod.overworld_stabilizer": "Oberwelt Stabilisator",
+  "item.grodomirsresourcefulcactimod.weak_nether_essence": "Schwache Netheressenz",
+  "item.grodomirsresourcefulcactimod.nether_essence": "Netheressenz",
+  "item.grodomirsresourcefulcactimod.nether_stabilizer": "Nether Stabilisator",
+
+  "block.grodomirsresourcefulcactimod.sheared_cactus": "Entstachelter Kaktus",
+  "block.grodomirsresourcefulcactimod.iron_cactus": "Eisen-Kaktus",
+  "block.grodomirsresourcefulcactimod.copper_cactus": "Kupfer-Kaktus",
+  "block.grodomirsresourcefulcactimod.amethyst_cactus": "Amethyst-Kaktus",
+  "block.grodomirsresourcefulcactimod.coal_cactus": "Kohle-Kaktus",
+  "block.grodomirsresourcefulcactimod.diamond_cactus": "Diamant-Kaktus",
+  "block.grodomirsresourcefulcactimod.emerald_cactus": "Smaragd-Kaktus",
+  "block.grodomirsresourcefulcactimod.glowstone_cactus": "Leuchtstein-Kaktus",
+  "block.grodomirsresourcefulcactimod.gold_cactus": "Gold-Kaktus",
+  "block.grodomirsresourcefulcactimod.lapis_cactus": "Lapislazuli-Kaktus",
+  "block.grodomirsresourcefulcactimod.netherite_cactus": "Netherit-Kaktus",
+  "block.grodomirsresourcefulcactimod.quartz_cactus": "Quarz-Kaktus",
+  "block.grodomirsresourcefulcactimod.redstone_cactus": "Redstone-Kaktus",
+
+  "block.grodomirsresourcefulcactimod.creeper_cactus": "Creeper-Kaktus",
+
+  "recipe.grodomirsresourcefulcactimod.inworldinteraction": "Interaktion mit der Welt",
+
+  "creativetab.grodomirsresourcefulcactimod.resourcefulcacti_tab": "Vielfältige Kakteen",
+
+  "tooltip.grodomirsresourcefulcactimod.tier1.firstline.tooltip": "Stufe 1",
+  "tooltip.grodomirsresourcefulcactimod.tier1.secondline.tooltip": "10% Chance Schwache Oberweltsessenz zu droppen",
+
+  "tooltip.grodomirsresourcefulcactimod.firstline.tier2.tooltip": "Stufe 2",
+  "tooltip.grodomirsresourcefulcactimod.secondline.tier2.tooltip": "5% Chance Schwache Netheressenz zu droppen",
+  "tooltip.grodomirsresourcefulcactimod.tier2.secondline.diamond_cactus.tooltip": "10% Chance Schwache Netheressenz zu droppen",
+
+  "tooltip.grodomirsresourcefulcactimod.tier3.firstline.tooltip": "Stufe 3",
+
+  "tooltip.grodomirsresourcefulcactimod.noshift.tooltip": "§7Für mehr Informationen die Umschalttaste gedrückt halten"
+}
+

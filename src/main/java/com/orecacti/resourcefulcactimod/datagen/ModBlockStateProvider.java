@@ -32,32 +32,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         cactusBlock(ModBlocks.QUARTZ_CACTUS);
         cactusBlock(ModBlocks.REDSTONE_CACTUS);
         cactusBlock(ModBlocks.CREEPER_CACTUS);
+
+        for(int i = 0; i < ModBlocks.CUSTOM_CACTI.getEntries().size(); i++){
+            cactusBlock((DeferredBlock<?>) ModBlocks.CUSTOM_CACTI.getEntries().stream().toList().get(i));
+        }
     }
-
-    /*private void cactusBlock(DeferredBlock<?> block) {
-        String name = block.getId().getPath();
-
-        ModelFile model = models()
-                .withExistingParent(name, mcLoc("block/block"))
-                .renderType("cutout")
-                .texture("side", modLoc("block/" + name + "_side"))
-                .texture("top", modLoc("block/" + name + "_top"))
-                .texture("bottom", modLoc("block/cactus_bottom"))
-                .texture("particle", modLoc("block/" + name + "_side"))
-                .element()
-                .from(1, 0, 1)
-                .to(15, 16, 15)
-                .allFaces((dir, face) -> {
-                    switch (dir) {
-                        case UP -> face.texture("#top");
-                        case DOWN -> face.texture("#bottom");
-                        default -> face.texture("#side");
-                    }
-                })
-                .end();
-
-        simpleBlockWithItem(block.get(), model);
-    }*/
 
     private void cactusBlock(DeferredBlock<?> block) {
         String name = block.getId().getPath();

@@ -20,11 +20,6 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModBlocks.SHEARED_CACTUS.asItem()))
                     .title(Component.translatable("creativetab.grodomirsresourcefulcactimod.resourcefulcacti_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        //output.accept(ModItems.CACTUS_SPIKE);
-                        //output.accept(ModItems.COPPER_CACTUS_SPIKE);
-                        //output.accept(ModItems.COPPER_NUGGET);
-                        //output.accept(ModBlocks.SHEARED_CACTUS);
-                        //output.accept(ModBlocks.IRON_CACTUS);
                         ModItems.ITEMS.getEntries().forEach(item ->
                                 output.accept(item.get())
                         );

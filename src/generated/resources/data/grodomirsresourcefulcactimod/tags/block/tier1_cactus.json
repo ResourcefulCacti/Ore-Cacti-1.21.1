@@ -5,6 +5,10 @@
     "grodomirsresourcefulcactimod:redstone_cactus",
     "grodomirsresourcefulcactimod:amethyst_cactus",
     "grodomirsresourcefulcactimod:quartz_cactus",
-    "grodomirsresourcefulcactimod:glowstone_cactus"
+    "grodomirsresourcefulcactimod:glowstone_cactus",
+    {
+      "id": "grodomirsresourcefulcactimod:chujiszon_cactus",
+      "required": false
+    }
   ]
 }

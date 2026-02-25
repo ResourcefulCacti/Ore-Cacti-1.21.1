@@ -21,14 +21,6 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        /*tag(ModTags.Items.TRANS_ITEMS)
-                .add(ModItems.COPPER_NUGGET.get());
-        tag(ModTags.Items.CACTUS_CROP)
-                .add(ModBlocks.SHEARED_CACTUS.asItem());
-        tag(ItemTags.CAMEL_FOOD)
-                .add(ModBlocks.SHEARED_CACTUS.asItem());
-        /*tag(ModTags.Items.ANIMAL_FOODS)
-                .add(ModBlocks.SHEARED_CACTUS.asItem());*/
 
         var inputAnimalFoodsTag = tag(ModTags.Items.ANIMAL_FOODS);
         var inputCamelFoodTag = tag(ItemTags.CAMEL_FOOD);

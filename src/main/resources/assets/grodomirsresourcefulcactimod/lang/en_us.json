@@ -35,6 +35,8 @@
 
   "block.grodomirsresourcefulcactimod.creeper_cactus": "Creeper Cactus",
 
+  "recipe.grodomirsresourcefulcactimod.inworldinteraction": "In World Interaction",
+
   "creativetab.grodomirsresourcefulcactimod.resourcefulcacti_tab": "Resourceful Cacti",
 
   "tooltip.grodomirsresourcefulcactimod.tier1.firstline.tooltip": "Tier 1",
@@ -42,6 +44,10 @@
 
   "tooltip.grodomirsresourcefulcactimod.firstline.tier2.tooltip": "Tier 2",
   "tooltip.grodomirsresourcefulcactimod.secondline.tier2.tooltip": "5% chance to drop Weak Nether Essence",
-  "tooltip.grodomirsresourcefulcactimod.tier2.secondline.diamond_cactus.tooltip": "10% chance to drop Weak Nether Essence"
+  "tooltip.grodomirsresourcefulcactimod.tier2.secondline.diamond_cactus.tooltip": "10% chance to drop Weak Nether Essence",
+
+  "tooltip.grodomirsresourcefulcactimod.tier3.firstline.tooltip": "Tier 3",
+
+  "tooltip.grodomirsresourcefulcactimod.noshift.tooltip": "§7Hold shift for more info."
 }
 

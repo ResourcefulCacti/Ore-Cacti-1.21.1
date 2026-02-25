@@ -30,7 +30,9 @@ public class ModTags {
 
 
     public static class Items {
-        //public static final TagKey<Item> TRANS_ITEMS = createTag("trans_items");
+        //public static final TagKey<Item> OVERWORLD_SEEDS = createTag("overworld_seeds");
+        //public static final TagKey<Item> NETHER_SEEDS = createTag("nether_seeds");
+
         public static final TagKey<Item> FERTILIZERS = createCompatibleTag("fertilizers");
         public static final TagKey<Item> CACTUS_CROP = createCompatibleTag("crops/cactus");
         public static final TagKey<Item> ANIMAL_FOODS = createCompatibleTag("animal_foods");

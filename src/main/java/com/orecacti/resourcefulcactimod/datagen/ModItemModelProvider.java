@@ -2,9 +2,13 @@ package com.orecacti.resourcefulcactimod.datagen;
 
 import com.orecacti.resourcefulcactimod.ResourcefulCactiMod;
 import com.orecacti.resourcefulcactimod.item.ModItems;
+import com.orecacti.resourcefulcactimod.util.item.GsonSpikeReader;
+import com.orecacti.resourcefulcactimod.util.item.ModSpikeItemData;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+
+import java.util.List;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -32,5 +36,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.WEAK_NETHER_ESSENCE.get());
         basicItem(ModItems.NETHER_ESSENCE.get());
         basicItem(ModItems.NETHER_STABILIZER.get());
+
+        for(int i = 0; i < ModItems.CUSTOM_ITEM.getEntries().size(); i++){
+            basicItem(ModItems.CUSTOM_ITEM.getEntries().stream().toList().get(i).get());
+        }
     }
 }

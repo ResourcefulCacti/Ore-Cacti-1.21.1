@@ -4,6 +4,10 @@
     "grodomirsresourcefulcactimod:copper_cactus",
     "grodomirsresourcefulcactimod:gold_cactus",
     "grodomirsresourcefulcactimod:emerald_cactus",
-    "grodomirsresourcefulcactimod:diamond_cactus"
+    "grodomirsresourcefulcactimod:diamond_cactus",
+    {
+      "id": "grodomirsresourcefulcactimod:kurwiszon_cactus",
+      "required": false
+    }
   ]
 }

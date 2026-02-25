@@ -1,33 +1,26 @@
 package com.orecacti.resourcefulcactimod.datagen;
 
 import com.orecacti.resourcefulcactimod.block.ModBlocks;
+import com.orecacti.resourcefulcactimod.block.ModCactusBlock;
 import com.orecacti.resourcefulcactimod.item.ModItems;
-import com.orecacti.resourcefulcactimod.util.ModTags;
-import net.minecraft.core.Holder;
+import com.orecacti.resourcefulcactimod.util.block.ReadCactiFromJson;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredItem;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class ModBlockLootTableProvider extends BlockLootSubProvider {
@@ -39,18 +32,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
 
         dropSelf(ModBlocks.SHEARED_CACTUS.get());
-        /*dropSelf(ModBlocks.IRON_CACTUS.get());
-        dropSelf(ModBlocks.COPPER_CACTUS.get());
-        dropSelf(ModBlocks.AMETHYST_CACTUS.get());
-        dropSelf(ModBlocks.COAL_CACTUS.get());
-        dropSelf(ModBlocks.DIAMOND_CACTUS.get());
-        dropSelf(ModBlocks.EMERALD_CACTUS.get());
-        dropSelf(ModBlocks.GLOWSTONE_CACTUS.get());
-        dropSelf(ModBlocks.GOLD_CACTUS.get());
-        dropSelf(ModBlocks.LAPIS_CACTUS.get());
-        dropSelf(ModBlocks.NETHERITE_CACTUS.get());
-        dropSelf(ModBlocks.QUARTZ_CACTUS.get());
-        dropSelf(ModBlocks.REDSTONE_CACTUS.get());*/
         dropOther(ModBlocks.CREEPER_CACTUS.get(), Items.GUNPOWDER);
 
         //Tier1
@@ -125,6 +106,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         //Tier3
         dropSelf(ModBlocks.NETHERITE_CACTUS.get());
 
+        dropOther(ModBlocks.POTTED_COAL.get(), ModBlocks.COAL_CACTUS.asItem());
+
+        readThis();
+
         /* Non-existent ingredient for non-existent Tier 4 cacti
         dropSelfPlusExtra(
                 ModBlocks.DIAMOND_CACTUS.get(),
@@ -134,7 +119,63 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
          */
     }
 
-    //protected LootTable.Builder testLoot(Block block, Item item, float chances, int count){
+    private void readThis(){
+        /*List<ModCactusBlockData> readBlocks = GsonCactusReader.readBlocksFromFile();
+
+
+        assert readBlocks != null;
+
+        if(!readBlocks.isEmpty()){
+            for(ModCactusBlockData addedCacti : readBlocks){
+                String id = addedCacti.getId();
+                int lightLevel = addedCacti.getLightLevel();
+                DeferredBlock<ModCactusBlock> cacti = ModBlocks.CUSTOM_CACTI_MAP.get(id);
+
+                if(addedCacti.dropWithChance){
+                    if(cacti != null){
+                        dropSelfPlusExtra(cacti.get(), ModItems.WEAK_OVERWORLD_ESSENCE.asItem(), addedCacti.getEssenceDropChance(), 1);
+                    }
+                }else{
+                    if(cacti != null){
+                        dropSelf(cacti.get());
+                    }
+                }
+            }
+        }*/
+
+        if(!ReadCactiFromJson.DROP_WITH_CHANCE.isEmpty()){
+            Map<String, Float> chanceDrop = ReadCactiFromJson.CHANCE_DROP;
+            Map<String, Integer> TIER = ReadCactiFromJson.TIER;
+
+            for(Map.Entry <String, Boolean> cacti : ReadCactiFromJson.DROP_WITH_CHANCE.entrySet()){
+                String id = cacti.getKey();
+                Boolean dropWithChance = cacti.getValue();
+                Float essenceDropChance = chanceDrop.get(id);
+                Integer tier = TIER.get(id);
+                DeferredBlock<ModCactusBlock> registeredCacti = ModBlocks.CUSTOM_CACTI_MAP.get(id);
+
+                System.out.println("ID of map1: " + id);
+                System.out.println("Dro extra?: " + dropWithChance);
+                System.out.println("Chance to drop: " + essenceDropChance);
+                System.out.println("Tier: " + tier);
+                System.out.println("Deferred block: " + registeredCacti);
+
+                if(dropWithChance && registeredCacti != null){
+                    switch(tier) {
+                        case 2 ->
+                                dropSelfPlusExtra(registeredCacti.get(), ModItems.WEAK_NETHER_ESSENCE.asItem(), essenceDropChance, 1);
+                        default ->
+                                dropSelfPlusExtra(registeredCacti.get(), ModItems.WEAK_OVERWORLD_ESSENCE.asItem(), essenceDropChance, 1);
+                    }
+                }else{
+                    if(registeredCacti !=null){
+                        dropSelf(registeredCacti.get());
+                    }
+                }
+            }
+        }
+    }
+
     protected void dropSelfPlusExtra(Block self, Item extra, float chance, int count){
         this.add(self, b -> {
            LootTable.Builder table = LootTable.lootTable();
@@ -158,6 +199,16 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return ModBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
+        List<Block> blocks = new ArrayList<>();
+
+        // Normal registered blocks
+        ModBlocks.BLOCKS.getEntries()
+                .forEach(holder -> blocks.add(holder.value()));
+
+        // Custom JSON blocks
+        ModBlocks.CUSTOM_CACTI_MAP.values()
+                .forEach(deferred -> blocks.add(deferred.get()));
+
+        return blocks;
     }
 }

@@ -1,0 +1,53 @@
+{
+  "item.grodomirsresourcefulcactimod.cactus_spike": "Igła kaktusa",
+  "item.grodomirsresourcefulcactimod.copper_cactus_spike": "Miedziana igła kaktusa",
+  "item.grodomirsresourcefulcactimod.iron_cactus_spike": "Żelazna igła kaktusa",
+  "item.grodomirsresourcefulcactimod.amethyst_cactus_spike": "Ametystowa igła kaktusa",
+  "item.grodomirsresourcefulcactimod.coal_cactus_spike": "Węgielna igła kaktusa",
+  "item.grodomirsresourcefulcactimod.diamond_cactus_spike": "Diamentowa igła kaktusa",
+  "item.grodomirsresourcefulcactimod.emerald_cactus_spike": "Szmaragdowa igła kaktusa",
+  "item.grodomirsresourcefulcactimod.glowstone_cactus_spike": "Jasnogłazowa igła kaktusa",
+  "item.grodomirsresourcefulcactimod.gold_cactus_spike": "Złota igła kaktusa",
+  "item.grodomirsresourcefulcactimod.lapis_cactus_spike": "Lazurytowa igła kaktusa",
+  "item.grodomirsresourcefulcactimod.netherite_cactus_spike": "Netherytowa igła kaktusa",
+  "item.grodomirsresourcefulcactimod.quartz_cactus_spike": "Kwarcowa igła kaktusa",
+  "item.grodomirsresourcefulcactimod.redstone_cactus_spike": "Igła kaktusa redstone",
+  "item.grodomirsresourcefulcactimod.weak_overworld_essence": "Mizerna nadziemna esencja",
+  "item.grodomirsresourcefulcactimod.overworld_essence": "Nadziemna esencja",
+  "item.grodomirsresourcefulcactimod.overworld_stabilizer": "Stabilizator nadziemia",
+  "item.grodomirsresourcefulcactimod.weak_nether_essence": "Mizerna esencja netheru",
+  "item.grodomirsresourcefulcactimod.nether_essence": "Esencja netheru",
+  "item.grodomirsresourcefulcactimod.nether_stabilizer": "Stabilizator netheru",
+
+  "block.grodomirsresourcefulcactimod.sheared_cactus": "Ogolony kaktus",
+  "block.grodomirsresourcefulcactimod.iron_cactus": "Żelazny kaktus",
+  "block.grodomirsresourcefulcactimod.copper_cactus": "Miedziany kaktus",
+  "block.grodomirsresourcefulcactimod.amethyst_cactus": "Ametystowy kaktus",
+  "block.grodomirsresourcefulcactimod.coal_cactus": "Węgielny kaktus",
+  "block.grodomirsresourcefulcactimod.diamond_cactus": "Diamentowy kaktus",
+  "block.grodomirsresourcefulcactimod.emerald_cactus": "Szmaragdowy kaktus",
+  "block.grodomirsresourcefulcactimod.glowstone_cactus": "Jasnogłazowy kaktus",
+  "block.grodomirsresourcefulcactimod.gold_cactus": "Złoty kaktus",
+  "block.grodomirsresourcefulcactimod.lapis_cactus": "Lazurytowy kaktus",
+  "block.grodomirsresourcefulcactimod.netherite_cactus": "Netherytowy kaktus",
+  "block.grodomirsresourcefulcactimod.quartz_cactus": "Kwarcowy kaktus",
+  "block.grodomirsresourcefulcactimod.redstone_cactus": "Kaktus redstone",
+
+  "block.grodomirsresourcefulcactimod.creeper_cactus": "Creeperowy kaktus",
+
+  "recipe.grodomirsresourcefulcactimod.inworldinteraction": "Interakcja w świecie",
+
+  "creativetab.grodomirsresourcefulcactimod.resourcefulcacti_tab": "Obfite kaktusy",
+
+  "tooltip.grodomirsresourcefulcactimod.tier1.firstline.tooltip": "Poziom 1",
+  "tooltip.grodomirsresourcefulcactimod.tier1.secondline.tooltip": "10% szansy na miezarną nadziemną esencję",
+
+  "tooltip.grodomirsresourcefulcactimod.firstline.tier2.tooltip": "Poziom 2",
+  "tooltip.grodomirsresourcefulcactimod.secondline.tier2.tooltip": "5% szansy na mizerną netherową esencję",
+  "tooltip.grodomirsresourcefulcactimod.tier2.secondline.diamond_cactus.tooltip": "10% szansy na mizerną netherową esencję",
+
+  "tooltip.grodomirsresourcefulcactimod.tier3.firstline.tooltip": "Poziom 3",
+
+  "tooltip.grodomirsresourcefulcactimod.noshift.tooltip": "§7Przytrzymaj shift po więcej info."
+}
+

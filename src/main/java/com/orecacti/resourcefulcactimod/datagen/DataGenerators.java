@@ -1,6 +1,7 @@
 package com.orecacti.resourcefulcactimod.datagen;
 
 import com.orecacti.resourcefulcactimod.ResourcefulCactiMod;
+import com.orecacti.resourcefulcactimod.util.block.ReadCactiFromJson;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;

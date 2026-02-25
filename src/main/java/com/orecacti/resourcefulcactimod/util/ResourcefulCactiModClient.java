@@ -6,6 +6,7 @@ import com.orecacti.resourcefulcactimod.block.ModCactusBlock;
 import com.orecacti.resourcefulcactimod.datagen.ModBlockLootTableProvider;
 import com.orecacti.resourcefulcactimod.item.ModItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
@@ -51,14 +52,6 @@ public class ResourcefulCactiModClient {
         // Some client setup code
         ResourcefulCactiMod.LOGGER.info("HELLO FROM CLIENT SETUP");
         ResourcefulCactiMod.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-        /*event.enqueueWork(() ->{
-            ModBlocks.BLOCKS.getEntries().forEach(entry ->{
-                Block block = entry.get();
-                if (block instanceof ModCactusBlock){
-                    ItemBlockRenderTypes.setRenderLayer(block, RenderType.cutout());
-                }
-            });
-        });*/
     }
 
     @SubscribeEvent
@@ -68,16 +61,33 @@ public class ResourcefulCactiModClient {
 
         if(block.defaultBlockState().is(ModTags.Blocks.TIER1_CACTUS)){
             event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.tier1.firstline.tooltip"));
-            event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.tier1.secondline.tooltip"));
+            if(Screen.hasShiftDown()){
+                event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.tier1.secondline.tooltip"));
+            }else{
+                event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.noshift.tooltip"));
+            }
         }
 
         if(block.defaultBlockState().is(ModTags.Blocks.TIER2_CACTUS)){
             event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.firstline.tier2.tooltip"));
             if(!block.defaultBlockState().is(ModBlocks.DIAMOND_CACTUS)){
-                event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.secondline.tier2.tooltip"));
+                if(Screen.hasShiftDown()){
+                    event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.secondline.tier2.tooltip"));
+                }else{
+                    event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.noshift.tooltip"));
+                }
             }else {
-                event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.tier2.secondline.diamond_cactus.tooltip"));
+                if(Screen.hasShiftDown()){
+                    event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.tier2.secondline.diamond_cactus.tooltip"));
+                }else{
+                    event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.noshift.tooltip"));
+                }
             }
+        }
+
+        if(block.defaultBlockState().is(ModTags.Blocks.TIER3_CACTUS)){
+            event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.tier3.firstline.tooltip"));
+            //event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.tier1.secondline.tooltip"));
         }
     }
 
