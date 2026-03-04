@@ -7,8 +7,6 @@ public class ReadCactiFromJson {
 
     public static final LinkedHashMap<String, Integer> TIER = new LinkedHashMap<>();
     public static final LinkedHashMap<String, Integer> CACTI_FROM_JSON = new LinkedHashMap<>();
-    public static final LinkedHashMap<String, Boolean>  DROP_WITH_CHANCE = new LinkedHashMap<>();
-    public static final LinkedHashMap<String, Float>  CHANCE_DROP = new LinkedHashMap<>();
 
     public static void loadCactiFromJson(){
         List<ModCactusBlockData> readBlocks = GsonCactusReader.readBlocksFromFile();
@@ -20,13 +18,9 @@ public class ReadCactiFromJson {
                 String id = addedCacti.getId();
                 int lightLevel = addedCacti.getLightLevel();
                 int tier = addedCacti.getTier();
-                float chanceDrop = addedCacti.essenceDropChance;
-                Boolean dropWithCahnce = addedCacti.dropWithChance;
 
                 TIER.put(id, tier);
                 CACTI_FROM_JSON.put(id, lightLevel);
-                DROP_WITH_CHANCE.put(id, dropWithCahnce);
-                CHANCE_DROP.put(id, chanceDrop);
             }
         }
     }

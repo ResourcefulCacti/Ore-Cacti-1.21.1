@@ -1,7 +1,7 @@
-package com.orecacti.resourcefulcactimod.block;
+package com.orecacti.resourcefulcactimod.common.block;
 
 import com.orecacti.resourcefulcactimod.ResourcefulCactiMod;
-import com.orecacti.resourcefulcactimod.item.ModItems;
+import com.orecacti.resourcefulcactimod.common.item.ModItems;
 import com.orecacti.resourcefulcactimod.util.block.ReadCactiFromJson;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -147,8 +147,11 @@ public class ModBlocks {
                     .mapColor(MapColor.PLANT)
                     .randomTicks()));
 
-    public static final DeferredBlock<ModCustomPottedBlock> POTTED_COAL = registerPottedBlock("potted_coal",
-            () -> new ModCustomPottedBlock(COAL_CACTUS.get(), BlockBehaviour.Properties.of()
+    public static final DeferredBlock<Block> CACTI_MATERIALIZER = registerBlock("cacti_materializer",
+            () -> new CactiMaterializerBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
+    public static final DeferredBlock<Block> POTTED_COAL = registerPottedBlock("potted_coal",
+            () -> new FlowerPotBlock(COAL_CACTUS.get(), BlockBehaviour.Properties.of()
                     .instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){

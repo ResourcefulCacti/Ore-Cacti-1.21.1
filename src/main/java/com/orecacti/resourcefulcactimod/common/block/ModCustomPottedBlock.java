@@ -1,4 +1,4 @@
-package com.orecacti.resourcefulcactimod.block;
+/*package com.orecacti.resourcefulcactimod.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -8,16 +8,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredRegister;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.function.Supplier;
 
 public class ModCustomPottedBlock extends FlowerPotBlock {
 
@@ -49,7 +43,7 @@ public class ModCustomPottedBlock extends FlowerPotBlock {
         if(handler != null){
             ItemStack toInsert = new ItemStack(this.getPotted().asItem(), 1);
 
-            System.out.println("Kurwa 2: " + toInsert);
+            //System.out.println("Kurwa 2: " + toInsert);
 
             for(int i = 0; i < handler.getSlots(); i++){
                 toInsert = handler.insertItem(i, toInsert, false);
@@ -59,4 +53,4 @@ public class ModCustomPottedBlock extends FlowerPotBlock {
 
         level.scheduleTick(pos, this, 200);
     }
-}
+}*/

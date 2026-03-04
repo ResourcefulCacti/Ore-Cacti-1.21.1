@@ -1,8 +1,8 @@
 package com.orecacti.resourcefulcactimod.datagen;
 
-import com.orecacti.resourcefulcactimod.block.ModBlocks;
-import com.orecacti.resourcefulcactimod.block.ModCactusBlock;
-import com.orecacti.resourcefulcactimod.item.ModItems;
+import com.orecacti.resourcefulcactimod.common.block.ModBlocks;
+import com.orecacti.resourcefulcactimod.common.block.ModCactusBlock;
+import com.orecacti.resourcefulcactimod.common.item.ModItems;
 import com.orecacti.resourcefulcactimod.util.block.ReadCactiFromJson;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -28,11 +28,15 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags(), registries);
     }
 
+    public static final float T1_ESS_DROP_CHANCE = 0.1F;
+    public static final float T2_ESS_DROP_CHANCE = 0.05F;
+
     @Override
     protected void generate() {
 
         dropSelf(ModBlocks.SHEARED_CACTUS.get());
         dropOther(ModBlocks.CREEPER_CACTUS.get(), Items.GUNPOWDER);
+        dropSelf(ModBlocks.CACTI_MATERIALIZER.get());
 
         //Tier1
         dropSelfPlusExtra(
@@ -100,13 +104,15 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelfPlusExtra(
                 ModBlocks.DIAMOND_CACTUS.get(),
                 ModItems.WEAK_NETHER_ESSENCE.asItem(),
-                0.1F,
+                0.05F,
                 1);
 
         //Tier3
         dropSelf(ModBlocks.NETHERITE_CACTUS.get());
 
-        dropOther(ModBlocks.POTTED_COAL.get(), ModBlocks.COAL_CACTUS.asItem());
+        //dropOther(ModBlocks.POTTED_COAL.get(), ModBlocks.COAL_CACTUS.asItem());
+
+        add(ModBlocks.POTTED_COAL.get(), createPotFlowerItemTable(ModBlocks.COAL_CACTUS.get()));
 
         readThis();
 
@@ -120,47 +126,35 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     }
 
     private void readThis(){
-        /*List<ModCactusBlockData> readBlocks = GsonCactusReader.readBlocksFromFile();
+        if(!ReadCactiFromJson.TIER.isEmpty()){
+            //Map<String, Float> chanceDrop = ReadCactiFromJson.CHANCE_DROP;
+            //Map<String, Integer> TIER = ReadCactiFromJson.TIER;
 
-
-        assert readBlocks != null;
-
-        if(!readBlocks.isEmpty()){
-            for(ModCactusBlockData addedCacti : readBlocks){
-                String id = addedCacti.getId();
-                int lightLevel = addedCacti.getLightLevel();
-                DeferredBlock<ModCactusBlock> cacti = ModBlocks.CUSTOM_CACTI_MAP.get(id);
-
-                if(addedCacti.dropWithChance){
-                    if(cacti != null){
-                        dropSelfPlusExtra(cacti.get(), ModItems.WEAK_OVERWORLD_ESSENCE.asItem(), addedCacti.getEssenceDropChance(), 1);
-                    }
-                }else{
-                    if(cacti != null){
-                        dropSelf(cacti.get());
-                    }
-                }
-            }
-        }*/
-
-        if(!ReadCactiFromJson.DROP_WITH_CHANCE.isEmpty()){
-            Map<String, Float> chanceDrop = ReadCactiFromJson.CHANCE_DROP;
-            Map<String, Integer> TIER = ReadCactiFromJson.TIER;
-
-            for(Map.Entry <String, Boolean> cacti : ReadCactiFromJson.DROP_WITH_CHANCE.entrySet()){
+            for(Map.Entry <String, Integer> cacti : ReadCactiFromJson.TIER.entrySet()){
                 String id = cacti.getKey();
-                Boolean dropWithChance = cacti.getValue();
-                Float essenceDropChance = chanceDrop.get(id);
-                Integer tier = TIER.get(id);
+                Integer tier = cacti.getValue();
                 DeferredBlock<ModCactusBlock> registeredCacti = ModBlocks.CUSTOM_CACTI_MAP.get(id);
+                //DeferredBlock<ModCactusBlock> registeredCacti2;
+                //Boolean dropWithChance = cacti.getValue();
+                //Float essenceDropChance = chanceDrop.get(id);
 
                 System.out.println("ID of map1: " + id);
-                System.out.println("Dro extra?: " + dropWithChance);
-                System.out.println("Chance to drop: " + essenceDropChance);
                 System.out.println("Tier: " + tier);
                 System.out.println("Deferred block: " + registeredCacti);
+                //System.out.println("Dro extra?: " + dropWithChance);
+                //System.out.println("Chance to drop: " + essenceDropChance);
 
-                if(dropWithChance && registeredCacti != null){
+                if(tier != null && registeredCacti != null){
+                    switch(tier){
+                        case 2 ->
+                            dropSelfPlusExtra(registeredCacti.get(), ModItems.WEAK_NETHER_ESSENCE.asItem(), T2_ESS_DROP_CHANCE, 1);
+                        case 1 ->
+                            dropSelfPlusExtra(registeredCacti.get(), ModItems.WEAK_OVERWORLD_ESSENCE.asItem(), T1_ESS_DROP_CHANCE, 1);
+                        default ->
+                            dropSelf(registeredCacti.get());
+                    }
+                }
+                /*if(dropWithChance && registeredCacti != null){
                     switch(tier) {
                         case 2 ->
                                 dropSelfPlusExtra(registeredCacti.get(), ModItems.WEAK_NETHER_ESSENCE.asItem(), essenceDropChance, 1);
@@ -171,7 +165,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                     if(registeredCacti !=null){
                         dropSelf(registeredCacti.get());
                     }
-                }
+                }*/
             }
         }
     }
@@ -205,9 +199,14 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         ModBlocks.BLOCKS.getEntries()
                 .forEach(holder -> blocks.add(holder.value()));
 
+        ModBlocks.POTTED_CACTI.getEntries()
+                .forEach(holder -> blocks.add(holder.value()));
+
         // Custom JSON blocks
-        ModBlocks.CUSTOM_CACTI_MAP.values()
-                .forEach(deferred -> blocks.add(deferred.get()));
+        /*ModBlocks.CUSTOM_CACTI_MAP.values()
+                .forEach(deferred -> blocks.add(deferred.get()));*/
+        ModBlocks.CUSTOM_CACTI.getEntries()
+                .forEach(holder -> blocks.add(holder.value()));
 
         return blocks;
     }

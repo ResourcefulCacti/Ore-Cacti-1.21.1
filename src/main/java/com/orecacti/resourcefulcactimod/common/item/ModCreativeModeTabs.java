@@ -1,7 +1,7 @@
-package com.orecacti.resourcefulcactimod.item;
+package com.orecacti.resourcefulcactimod.common.item;
 
 import com.orecacti.resourcefulcactimod.ResourcefulCactiMod;
-import com.orecacti.resourcefulcactimod.block.ModBlocks;
+import com.orecacti.resourcefulcactimod.common.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;

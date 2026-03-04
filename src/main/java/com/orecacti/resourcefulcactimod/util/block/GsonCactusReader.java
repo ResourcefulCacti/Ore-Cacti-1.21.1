@@ -26,8 +26,8 @@ public class GsonCactusReader {
             //cacti.add(new ModCactusBlockData("Test cactus", "test_cactus", 1, true, false, 0F, false, 0));
             //cacti.add(new ModCactusBlockData("Test ess cactus", "test_ess_cactus", 1, false, true, 0.1F, false, 0));
             //cacti.add(new ModCactusBlockData("Test glow cactus", "test_glow_cactus", 1, true, false, 0F, true, 4));
-            cacti.add(new ModCactusBlockData("Test glow cactus", "kurwiszon_cactus", 2, false, true, 0.9F, true, 16));
-            cacti.add(new ModCactusBlockData("Test glow cactus", "chujiszon_cactus", 1, false, true, 0.9F, true, 16));
+            cacti.add(new ModCactusBlockData("kurwiszon_cactus", 2, 16));
+            cacti.add(new ModCactusBlockData("chujiszon_cactus", 1, 16));
 
             GsonCactusWriter.writeBlocksToFile(cacti);
             return cacti;

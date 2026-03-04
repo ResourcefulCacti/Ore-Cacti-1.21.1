@@ -1,14 +1,10 @@
 package com.orecacti.resourcefulcactimod.datagen;
 
 import com.orecacti.resourcefulcactimod.ResourcefulCactiMod;
-import com.orecacti.resourcefulcactimod.item.ModItems;
-import com.orecacti.resourcefulcactimod.util.item.GsonSpikeReader;
-import com.orecacti.resourcefulcactimod.util.item.ModSpikeItemData;
+import com.orecacti.resourcefulcactimod.common.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-
-import java.util.List;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {

@@ -1,8 +1,7 @@
 package com.orecacti.resourcefulcactimod.datagen;
 
 import com.orecacti.resourcefulcactimod.ResourcefulCactiMod;
-import com.orecacti.resourcefulcactimod.block.ModBlocks;
-import com.orecacti.resourcefulcactimod.item.ModItems;
+import com.orecacti.resourcefulcactimod.common.block.ModBlocks;
 import com.orecacti.resourcefulcactimod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

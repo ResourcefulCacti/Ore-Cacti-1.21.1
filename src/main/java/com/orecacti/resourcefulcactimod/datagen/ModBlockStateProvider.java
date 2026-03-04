@@ -1,11 +1,9 @@
 package com.orecacti.resourcefulcactimod.datagen;
 
 import com.orecacti.resourcefulcactimod.ResourcefulCactiMod;
-import com.orecacti.resourcefulcactimod.block.ModBlocks;
+import com.orecacti.resourcefulcactimod.common.block.ModBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.Block;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -33,9 +31,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         cactusBlock(ModBlocks.REDSTONE_CACTUS);
         cactusBlock(ModBlocks.CREEPER_CACTUS);
 
+        //blockWithItem(ModBlocks.CACTI_MATERIALIZER);
+
         for(int i = 0; i < ModBlocks.CUSTOM_CACTI.getEntries().size(); i++){
             cactusBlock((DeferredBlock<?>) ModBlocks.CUSTOM_CACTI.getEntries().stream().toList().get(i));
         }
+    }
+
+    private void blockWithItem(DeferredBlock<?> deferredBlock){
+        simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
     }
 
     private void cactusBlock(DeferredBlock<?> block) {

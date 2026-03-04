@@ -1,14 +1,10 @@
 package com.orecacti.resourcefulcactimod.util;
 
 import com.orecacti.resourcefulcactimod.ResourcefulCactiMod;
-import com.orecacti.resourcefulcactimod.block.ModBlocks;
-import com.orecacti.resourcefulcactimod.block.ModCactusBlock;
-import com.orecacti.resourcefulcactimod.datagen.ModBlockLootTableProvider;
-import com.orecacti.resourcefulcactimod.item.ModItems;
+import com.orecacti.resourcefulcactimod.common.block.ModBlocks;
+import com.orecacti.resourcefulcactimod.common.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -18,7 +14,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.level.Level;
@@ -70,6 +65,15 @@ public class ResourcefulCactiModClient {
 
         if(block.defaultBlockState().is(ModTags.Blocks.TIER2_CACTUS)){
             event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.firstline.tier2.tooltip"));
+            if(Screen.hasShiftDown()){
+                event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.secondline.tier2.tooltip"));
+            }else{
+                event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.noshift.tooltip"));
+            }
+        }
+
+        /*if(block.defaultBlockState().is(ModTags.Blocks.TIER2_CACTUS)){
+            event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.firstline.tier2.tooltip"));
             if(!block.defaultBlockState().is(ModBlocks.DIAMOND_CACTUS)){
                 if(Screen.hasShiftDown()){
                     event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.secondline.tier2.tooltip"));
@@ -83,7 +87,9 @@ public class ResourcefulCactiModClient {
                     event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.noshift.tooltip"));
                 }
             }
-        }
+
+
+        }*/
 
         if(block.defaultBlockState().is(ModTags.Blocks.TIER3_CACTUS)){
             event.getToolTip().add(Component.translatable("tooltip.grodomirsresourcefulcactimod.tier3.firstline.tooltip"));
@@ -91,7 +97,7 @@ public class ResourcefulCactiModClient {
         }
     }
 
-    @SubscribeEvent
+    /*@SubscribeEvent
         public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
             Level level = event.getLevel();
             if (level.isClientSide()) return;
@@ -136,5 +142,5 @@ public class ResourcefulCactiModClient {
 
             event.setCanceled(true);
             event.setCancellationResult(InteractionResult.SUCCESS);
-        }
+        }*/
 }

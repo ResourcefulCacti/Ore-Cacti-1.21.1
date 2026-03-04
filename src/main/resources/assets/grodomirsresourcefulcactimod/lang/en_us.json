@@ -32,6 +32,7 @@
   "block.grodomirsresourcefulcactimod.netherite_cactus": "Netherite Cactus",
   "block.grodomirsresourcefulcactimod.quartz_cactus": "Quartz Cactus",
   "block.grodomirsresourcefulcactimod.redstone_cactus": "Redstone Cactus",
+  "block.grodomirsresourcefulcactimod.cacti_materializer": "Cacti Materializer [WIP]",
 
   "block.grodomirsresourcefulcactimod.creeper_cactus": "Creeper Cactus",
 
@@ -44,7 +45,6 @@
 
   "tooltip.grodomirsresourcefulcactimod.firstline.tier2.tooltip": "Tier 2",
   "tooltip.grodomirsresourcefulcactimod.secondline.tier2.tooltip": "5% chance to drop Weak Nether Essence",
-  "tooltip.grodomirsresourcefulcactimod.tier2.secondline.diamond_cactus.tooltip": "10% chance to drop Weak Nether Essence",
 
   "tooltip.grodomirsresourcefulcactimod.tier3.firstline.tooltip": "Tier 3",
 

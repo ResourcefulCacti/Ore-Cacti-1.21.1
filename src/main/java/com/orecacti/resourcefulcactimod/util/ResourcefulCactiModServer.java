@@ -1,8 +1,8 @@
 package com.orecacti.resourcefulcactimod.util;
 
 import com.orecacti.resourcefulcactimod.ResourcefulCactiMod;
-import com.orecacti.resourcefulcactimod.block.ModBlocks;
-import com.orecacti.resourcefulcactimod.item.ModItems;
+import com.orecacti.resourcefulcactimod.common.block.ModBlocks;
+import com.orecacti.resourcefulcactimod.common.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -27,7 +27,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 @EventBusSubscriber(modid = ResourcefulCactiMod.MOD_ID, value = Dist.DEDICATED_SERVER)
 public class ResourcefulCactiModServer {
 
-    @SubscribeEvent
+    /*@SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         Level level = event.getLevel();
         if (level.isClientSide()) return;
@@ -72,5 +72,5 @@ public class ResourcefulCactiModServer {
 
         event.setCanceled(true);
         event.setCancellationResult(InteractionResult.SUCCESS);
-    }
+    }*/
 }

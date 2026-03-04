@@ -1,7 +1,7 @@
 package com.orecacti.resourcefulcactimod.datagen;
 
-import com.orecacti.resourcefulcactimod.block.ModBlocks;
-import com.orecacti.resourcefulcactimod.item.ModItems;
+import com.orecacti.resourcefulcactimod.common.block.ModBlocks;
+import com.orecacti.resourcefulcactimod.common.item.ModItems;
 import com.orecacti.resourcefulcactimod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -9,11 +9,9 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -23,7 +21,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
-
         //Tier 1, no stabilizer
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.COAL_CACTUS.get())
                 .pattern("FSF")

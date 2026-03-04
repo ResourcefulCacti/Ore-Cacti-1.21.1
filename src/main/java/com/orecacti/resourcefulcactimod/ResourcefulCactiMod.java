@@ -1,11 +1,20 @@
 package com.orecacti.resourcefulcactimod;
 
-import com.orecacti.resourcefulcactimod.block.ModBlocks;
-import com.orecacti.resourcefulcactimod.item.ModCreativeModeTabs;
-import com.orecacti.resourcefulcactimod.item.ModItems;
+import com.orecacti.resourcefulcactimod.common.block.ModBlocks;
+import com.orecacti.resourcefulcactimod.common.block.entity.ModBlockEntities;
+import com.orecacti.resourcefulcactimod.common.block.entity.renderer.CactiMaterializerEntityRenderer;
+import com.orecacti.resourcefulcactimod.common.item.ModCreativeModeTabs;
+import com.orecacti.resourcefulcactimod.common.item.ModItems;
 import com.orecacti.resourcefulcactimod.recipe.ModRecipe;
+import com.orecacti.resourcefulcactimod.screen.CactiMaterializerScreen;
+import com.orecacti.resourcefulcactimod.screen.ModMenuTypes;
 import com.orecacti.resourcefulcactimod.util.block.ReadCactiFromJson;
 import com.orecacti.resourcefulcactimod.util.item.ReadSpikeFromJson;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -47,9 +56,12 @@ public class ResourcefulCactiMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
+        modEventBus.addListener(this::registerCapabilities);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -57,6 +69,10 @@ public class ResourcefulCactiMod {
 
     private void commonSetup(FMLCommonSetupEvent event) {
 
+    }
+
+    public void registerCapabilities(RegisterCapabilitiesEvent event){
+        ModBlockEntities.registerCapabilities(event);
     }
 
     // Add the example block item to the building blocks tab
@@ -74,6 +90,20 @@ public class ResourcefulCactiMod {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+
+    }
+
+    @EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
+    public static class ClientModEvents{
+        @SubscribeEvent
+        public static void registerScreens(RegisterMenuScreensEvent event){
+            event.register(ModMenuTypes.CACTI_MATERIALIZER_MENU.get(), CactiMaterializerScreen::new);
+        }
+
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event){
+            event.registerBlockEntityRenderer(ModBlockEntities.CACTI_MATERIALIZER_BE.get(), CactiMaterializerEntityRenderer::new);
+        }
 
     }
 }

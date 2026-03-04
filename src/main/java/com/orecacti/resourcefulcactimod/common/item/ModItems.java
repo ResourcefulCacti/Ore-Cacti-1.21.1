@@ -1,8 +1,6 @@
-package com.orecacti.resourcefulcactimod.item;
+package com.orecacti.resourcefulcactimod.common.item;
 
 import com.orecacti.resourcefulcactimod.ResourcefulCactiMod;
-import com.orecacti.resourcefulcactimod.util.item.GsonSpikeReader;
-import com.orecacti.resourcefulcactimod.util.item.ModSpikeItemData;
 import com.orecacti.resourcefulcactimod.util.item.ReadSpikeFromJson;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
